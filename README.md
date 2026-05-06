@@ -1,71 +1,72 @@
-# SQL Insurance Claims Analysis – ETL & Data Transformation
+📊 Business Context & Impact
 
--  Project Overview
+This project simulates a real-world insurance data environment where raw claims data is often incomplete, inconsistent, and unstructured.
 
-This project focuses on using SQL (PostgreSQL) to simulate a basic ETL workflow on insurance claims data.
+In production systems, data rarely arrives in an analysis-ready state. It typically requires:
 
-The goal is to take raw, unstructured data and transform it into a clean, structured format that can be used for analysis.
+• Standardization of formats (dates, categories, IDs)
+• Handling missing or null values
+• Removing duplicates and inconsistencies
+• Structuring data for reliable reporting and analytics
 
----
+This project demonstrates how SQL can be used as a core data transformation tool in an ETL-like workflow.
 
--  Why This Matters
+🎯 Real-World Relevance
 
-In real-world data environments, raw data is rarely ready for analysis.
+This project reflects tasks commonly performed in:
 
-Common challenges include:
-- Missing values  
-- Inconsistent formats  
-- Duplicate records  
+• Data Analyst roles (data cleaning, reporting datasets)
+• Junior Data Engineer roles (data transformation pipelines)
+• BI & Analytics environments (preparing data for dashboards)
 
-Being able to clean and structure data using SQL is a core skill for entry-level data roles such as Data Analyst and a foundation for Data Engineering.
+It builds foundational skills required in data preparation, data quality control, and analytical structuring, which are essential in any data-driven organization.
 
----
+🧠 Key Skills Demonstrated
 
- - What This Project Demonstrates
+• ETL-style thinking using SQL (Extract → Transform → Load simulation)
+• Data cleaning and standardization techniques
+• Handling missing, inconsistent, and duplicate data
+• Joining multiple datasets for relational analysis
+• Aggregating and summarizing business metrics
+• Writing structured, readable SQL queries
+• Translating raw data into analysis-ready tables
 
-- Writing SQL queries to clean and standardize raw data  
-- Handling missing values and inconsistent formats  
-- Using JOINs to combine multiple datasets  
-- Applying aggregations and filters to explore data  
-- Structuring data into analysis-ready tables  
-- Thinking through problems step-by-step using SQL  
+🛠️ Tech Stack
 
----
+• PostgreSQL
+• SQL (Advanced querying & transformations)
+• Relational Database Design Principles
+• Git & GitHub (version control & documentation)
 
-- Tech & Tools
+📁 Project Structure
 
-- PostgreSQL  
-- SQL  
-- Relational database concepts  
-- Git & GitHub  
+🔹 SQL Scripts
 
----
+Step-by-step transformation pipeline including:
 
-- Project Structure
+• Data cleaning operations
+• Data standardization logic
+• Transformation queries
+• Exploratory analysis queries
 
-- SQL Scripts  
-  Step-by-step queries for:
-  - Data cleaning  
-  - Data transformation  
-  - Basic analysis  
+🔹 Documentation
 
-- Documentation  
-  Explanations are included alongside queries to improve clarity and understanding.
+Each query is explained to show:
 
-This project focuses on building strong SQL foundations and clear thinking, rather than production-level pipeline development.
+• Why the transformation was needed
+• What problem it solves
+• How it contributes to analysis readiness
 
----
+This project prioritizes clarity of thought and SQL fundamentals over production-level engineering complexity.
 
-- Example Query
+• Example Query (Business Insight)
 
-```sql
--- Example: Identify total claim amount per customer
+-- Total approved claims per customer (business metric example)
 
 SELECT 
     customer_id,
-    SUM(claim_amount) AS total_claim_amount
+    SUM(claim_amount) AS total_claim_value
 FROM claims
 WHERE claim_status = 'Approved'
 GROUP BY customer_id
-ORDER BY total_claim_amount DESC;
-
+ORDER BY total_claim_value DESC;
